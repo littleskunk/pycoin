@@ -19,6 +19,7 @@ def load_library():
     if os.getenv("PYCOIN_NATIVE") != "openssl":
         return None
     library_path = ctypes.util.find_library("crypto")
+    print library_path
     if library_path is None:
         return None
 
@@ -54,6 +55,7 @@ def load_library():
     ]
     set_api(library, BIGNUM_API)
     set_api(library, ECC_API)
+    print library
     return library
 
 
